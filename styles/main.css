@@ -1,0 +1,217 @@
+/* Gör så att man själv kan bestämma margin och padding utan Browserns support */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Bestämmer hur stort HTML och Body ska vara */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Header börjar här */
+
+header {
+    /* Header egenskaper */
+    height: 300px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+
+}
+
+/* Där bilden ligger */
+
+header main {
+    /* Header positionering */
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* Bilden i headern */
+
+header img {
+    
+    /* Bild positionering */
+    
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+
+}
+
+/* Navbar i Header */
+
+header nav {
+    width: 100%;
+    height: 50px;
+    background-color: #181B21;
+    
+    /* Positonering */
+    
+    position: absolute;
+    bottom: -50px;
+    z-index: 0;
+    
+    /* Lite finare CSS */
+    
+    box-shadow: 0 0 10px #000;
+    
+    /* Centrering */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+/* Fonten/Texten i headern */
+
+header h1 {
+    
+    /* Positioning/Centrering */
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Font stuff */
+    
+    font-family: Helvetica;
+    letter-spacing: 1.25px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 100px;
+    text-decoration: none;
+    color: rgb(255, 195, 49);
+    z-index: 2;
+    position: absolute;
+
+}
+
+/* Thumbnail/Bilden positioneras och flexas. Detta för att bilden inte ska vara under alla divar utan över. */
+
+header .thumb {
+   
+    /* Centrering */
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header nav .menyitem{
+    /* Spacing */
+    
+    padding: 20px;
+    text-decoration: none;
+    height: 100%;
+    
+    /* Centrering*/
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Font stuff */
+    
+    color: aqua;
+    font-family: Montserrat;
+}
+
+/* MAIN KOD BÖRJAR HÄR */
+
+.main{
+    width: 100%; /* Max width för varje skärm */
+    min-height: 400px; /* Main kommer alltid att vara minst 400px */ 
+}
+
+
+/* Tre länkar i början av main med iconer*/
+
+.main .quick-access {
+    /* Positionering*/
+    
+    min-height: 150px;
+    width: 100%;
+    
+    /* Centrering*/
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Gör så att dessa tre länkargår horisontellt */
+    flex-direction: row;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+
+.main .quick-access .container {
+    /* Cointainrarnas uppbyggnad*/
+    width: 200px;
+    height: 200px;
+    background-color: #292e31;
+    margin: 30px;
+    border-radius: 5px;
+    transition: all .5s;
+    position: relative;
+}
+
+.main .quick-access .container a {
+    /* Texten för varje container*/
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(24, 27, 33, 0.28);
+    border-radius: 5px;
+}
+
+.main .quick-access .container:hover {
+    
+    box-shadow: 0 0 10px #000; /* När man hovrar på en container så kommer skugga runt omkring */
+}
+.main .quick-access .quests{ /* Quests link rutan */
+    background-image: url("../images/mainphoto2.jpg"); /* bild */
+    background-size: cover; /* Täcker hela rutan */
+    background-position: center;
+    border-radius: 5px;
+}
+.main .quick-access .discord{ /* Quests link rutan */
+    background-image: url("../images/mainphoto3.jpg"); /* bild */
+    background-size: cover;
+    background-position: left;
+    border-radius: 5px;
+}
+.main .quick-access .github{ /* Quests link rutan */
+    background-image: url("../images/mainphoto1.jpg"); /* bild */
+    background-size: cover;
+    background-position:left;
+    border-radius: 5px;
+    
+}
+.main .quick-access .container .overlay{
+    
+}
