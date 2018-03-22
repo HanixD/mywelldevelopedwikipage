@@ -11,6 +11,17 @@ html,
 body {
     width: 100%;
     height: 100%;
+    background-image: url("../images/Wiki-background.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Header börjar här */
@@ -38,9 +49,8 @@ header main {
 /* Bilden i headern */
 
 header img {
-    
+
     /* Bild positionering */
-    
     z-index: 1;
     position: absolute;
     width: 100%;
@@ -54,19 +64,16 @@ header nav {
     width: 100%;
     height: 50px;
     background-color: #181B21;
-    
+
     /* Positonering */
-    
     position: absolute;
     bottom: -50px;
     z-index: 0;
-    
+
     /* Lite finare CSS */
-    
     box-shadow: 0 0 10px #000;
-    
+
     /* Centrering */
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,17 +84,15 @@ header nav {
 /* Fonten/Texten i headern */
 
 header h1 {
-    
+
     /* Positioning/Centrering */
-    
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     /* Font stuff */
-    
     font-family: Helvetica;
     letter-spacing: 1.25px;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -102,9 +107,8 @@ header h1 {
 /* Thumbnail/Bilden positioneras och flexas. Detta för att bilden inte ska vara under alla divar utan över. */
 
 header .thumb {
-   
+
     /* Centrering */
-    
     width: 100%;
     height: 100%;
     display: flex;
@@ -116,29 +120,31 @@ header .thumb {
     left: 0;
 }
 
-header nav .menyitem{
+header nav .menyitem {
     /* Spacing */
-    
     padding: 20px;
     text-decoration: none;
     height: 100%;
-    
+
     /* Centrering*/
-    
     display: flex;
     justify-content: center;
     align-items: center;
     /* Font stuff */
-    
     color: aqua;
     font-family: Montserrat;
 }
 
 /* MAIN KOD BÖRJAR HÄR */
 
-.main{
-    width: 100%; /* Max width för varje skärm */
-    min-height: 400px; /* Main kommer alltid att vara minst 400px */ 
+.main {
+    width: 100%;
+    /* Max width för varje skärm */
+    min-height: 400px;
+    /* Main kommer alltid att vara minst 400px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -146,32 +152,38 @@ header nav .menyitem{
 
 .main .quick-access {
     /* Positionering*/
-    
-    min-height: 150px;
-    width: 100%;
-    
+    width: 80%;
+    height: auto;
+
     /* Centrering*/
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     /* Gör så att dessa tre länkargår horisontellt */
     flex-direction: row;
-    margin-top: 50px;
+    margin-top: 90px;
     flex-wrap: wrap;
+    background-color: rgba(24, 27, 33, 0.56);
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 10px #000;
 }
 
 
 .main .quick-access .container {
     /* Cointainrarnas uppbyggnad*/
-    width: 200px;
+    width: 256px;
     height: 200px;
-    background-color: #292e31;
+    background-color: rgba(24, 27, 33, 0.56);
     margin: 30px;
     border-radius: 5px;
     transition: all .5s;
     position: relative;
+    box-shadow: 0 0 10px #000;
+
 }
 
 .main .quick-access .container a {
@@ -187,31 +199,64 @@ header nav .menyitem{
     text-decoration: none;
     background-color: rgba(24, 27, 33, 0.28);
     border-radius: 5px;
+    transition: all .5s;
 }
 
-.main .quick-access .container:hover {
-    
-    box-shadow: 0 0 10px #000; /* När man hovrar på en container så kommer skugga runt omkring */
+
+.main .quick-access .container a:hover {
+
+    background-color: rgba(24, 27, 33, 0.58);
+    /* När man hovrar på en container så kommer skugga runt omkring */
 }
-.main .quick-access .quests{ /* Quests link rutan */
-    background-image: url("../images/mainphoto2.jpg"); /* bild */
-    background-size: cover; /* Täcker hela rutan */
+
+.main .quick-access .quests {
+    /* Quests link rutan */
+    background-image: url("../images/mainphoto2.jpg");
+    /* bild */
+    background-size: cover;
+    /* Täcker hela rutan */
     background-position: center;
     border-radius: 5px;
 }
-.main .quick-access .discord{ /* Quests link rutan */
-    background-image: url("../images/mainphoto3.jpg"); /* bild */
+
+.main .quick-access .discord {
+    /* Quests link rutan */
+    background-image: url("../images/mainphoto3.jpg");
+    /* bild */
     background-size: cover;
     background-position: left;
     border-radius: 5px;
 }
-.main .quick-access .github{ /* Quests link rutan */
-    background-image: url("../images/mainphoto1.jpg"); /* bild */
+
+.main .quick-access .github {
+    /* Quests link rutan */
+    background-image: url("../images/mainphoto1.jpg");
+    /* bild */
     background-size: cover;
-    background-position:left;
+    background-position: left;
     border-radius: 5px;
-    
+
 }
-.main .quick-access .container .overlay{
-    
+
+.main .quick-access .cont {
+    background-color: azure;
+    height: 500px;
+    width: 500px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main .quick-access .big {
+    width: 100%;
+    height: 50%;
+    background-color: red;
+}
+
+.main .quick-access .double {
+    width: 100%;
+    height: 50%;
+    background-color: green;
 }
